@@ -25,7 +25,6 @@ def register():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         sock.sendto(dns_message.encode(), (as_ip, as_port))
-        # Assuming successful registration if no exception
         return '', 201
     except Exception as e:
         print(f"Registration failed: {e}")

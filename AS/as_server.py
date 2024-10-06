@@ -9,7 +9,6 @@ DNS_PORT = 53533
 RECORDS_FILE = 'records.json'
 BUFFER_SIZE = 1024
 
-# Load existing DNS records or initialize an empty dictionary
 if os.path.exists(RECORDS_FILE):
     with open(RECORDS_FILE, 'r') as f:
         dns_records = json.load(f)

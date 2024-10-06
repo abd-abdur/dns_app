@@ -5,7 +5,6 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
-# Copy necessary files
 COPY app.py .
 COPY requirements.txt .
 
