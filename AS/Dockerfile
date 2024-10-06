@@ -1,19 +1,17 @@
-# FS/Dockerfile
+# AS/Dockerfile
 
 FROM python:3.9-slim
 
 # Set working directory
 WORKDIR /app
 
-# Copy necessary files
-COPY app.py .
+COPY as_server.py .
+COPY records.json .
 COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose HTTP port 9090
-EXPOSE 9090
+EXPOSE 53533/udp
 
-# Run the Fibonacci Server
-CMD ["python", "app.py"]
+CMD ["python", "as_server.py"]
